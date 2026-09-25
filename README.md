@@ -1,103 +1,88 @@
-[English](/README.md) | [中文](/README.zh_CN.md) | [Español](/README.es_ES.md) | [Русский](/README.ru_RU.md)
-
 <p align="center"><a href="#"><img src="./media/3X-UI.png" alt="Image"></a></p>
 
-**An Advanced Web Panel • Built on Xray Core**
+**Продвинутая веб-панель • Построена на основе Xray Core**
 
-[![](https://img.shields.io/github/v/release/mhsanaei/3x-ui.svg)](https://github.com/MHSanaei/3x-ui/releases)
-[![](https://img.shields.io/github/actions/workflow/status/mhsanaei/3x-ui/release.yml.svg)](#)
-[![GO Version](https://img.shields.io/github/go-mod/go-version/mhsanaei/3x-ui.svg)](#)
-[![Downloads](https://img.shields.io/github/downloads/mhsanaei/3x-ui/total.svg)](#)
-[![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+> **Отказ от ответственности:** Этот проект предназначен только для личного обучения и общения. Пожалуйста, не используйте его в незаконных целях и не применяйте в производственной среде.
 
-> **Disclaimer:** This project is only for personal learning and communication, please do not use it for illegal purposes, please do not use it in a production environment
-
-**If this project is helpful to you, you may wish to give it a**:star2:
-
-<p align="left">
-  <a href="https://buymeacoffee.com/mhsanaei" target="_blank">
-    <img src="./media/buymeacoffe.png" alt="Image">
-  </a>
-</p>
+**Если этот проект оказался полезным для вас, вы можете оценить его, поставив звёздочку** :star2:
 
 - USDT (TRC20): `TXncxkvhkDWGts487Pjqq1qT9JmwRUz8CC`
 - MATIC (polygon): `0x41C9548675D044c6Bfb425786C765bc37427256A`
 - LTC (Litecoin): `ltc1q2ach7x6d2zq0n4l0t4zl7d7xe2s6fs7a3vspwv`
 
-## Install & Upgrade
+## Установка и обновление
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/qzstatick/3x-ui/master/install.sh)
 ```
 
-## Install legacy Version (we don't recommend)
+## Установить старую версию (мы не рекомендуем)
 
-To install your desired version, use following installation command. e.g., ver `v1.7.9`:
+Чтобы установить желаемую версию, используйте следующую команду установки. Например, ver `v1.7.9`:
 
 ```
-VERSION=v1.7.9 && bash <(curl -Ls "https://raw.githubusercontent.com/mhsanaei/3x-ui/$VERSION/install.sh") $VERSION
+VERSION=v0.0.1 && <(curl -Ls "https://raw.githubusercontent.com/qzstatick/3x-ui/$VERSION/install.sh") $VERSION
 ```
 
-## SSL Certificate
+## SSL Сертификат
 
 <details>
-  <summary>Click for SSL Certificate details</summary>
+  <summary>Нажмите для получения информации об SSL сертификате</summary>
 
 ### ACME
 
-To manage SSL certificates using ACME:
+Для управления SSL сертификатами с помощью ACME:
 
-1. Ensure your domain is correctly resolved to the server.
-2. Run the `x-ui` command in the terminal, then choose `SSL Certificate Management`.
-3. You will be presented with the following options:
+1. Убедитесь, что ваш домен правильно настроен и указывает на сервер.
+2. Выполните команду `x-ui` в терминале, затем выберите `SSL Certificate Management`.
+3. Вам будут предложены следующие опции:
 
-   - **Get SSL:** Obtain SSL certificates.
-   - **Revoke:** Revoke existing SSL certificates.
-   - **Force Renew:** Force renewal of SSL certificates.
-   - **Show Existing Domains:** Display all domain certificates available on the server.  
-   - **Set Certificate Paths for the Panel:** Specify the certificate for your domain to be used by the panel. 
+   - **Get SSL:** Получить SSL сертификаты.
+   - **Revoke:** Отозвать существующие SSL сертификаты.
+   - **Force Renew:** Принудительно перевыпустить SSL сертификаты.
+   - **Show Existing Domains:** Отобразить все сертификаты доменов, доступные на сервере.  
+   - **Set Certificate Paths for the Panel:** Укажите сертификат для вашего домена, который будет использоваться панелью.
 
 ### Certbot
 
-To install and use Certbot:
+Для установки и использования Certbot:
 
 ```sh
 apt-get install certbot -y
-certbot certonly --standalone --agree-tos --register-unsafely-without-email -d yourdomain.com
+certbot certonly --standalone --agree-tos --register-unsafely-without-email -d вашдомен.com
 certbot renew --dry-run
 ```
 
 ### Cloudflare
 
-The management script includes a built-in SSL certificate application for Cloudflare. To use this script to apply for a certificate, you need the following:
+Скрипт управления включает встроенное приложение для получения SSL сертификата через Cloudflare. Чтобы использовать этот скрипт для запроса сертификата, вам потребуется следующее:
 
-- Cloudflare registered email
-- Cloudflare Global API Key
-- The domain name must be resolved to the current server through Cloudflare
+- Email, зарегистрированный в Cloudflare
+- Глобальный API-ключ Cloudflare
+- Доменное имя должно указывать на текущий сервер через Cloudflare
 
-**How to get the Cloudflare Global API Key:**
+**Как получить глобальный API-ключ Cloudflare:**
 
-1. Run the `x-ui` command in the terminal, then choose `Cloudflare SSL Certificate`.
-2. Visit the link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens).
-3. Click on "View Global API Key" (see the screenshot below):
+1. Выполните команду `x-ui` в терминале, затем выберите `Cloudflare SSL Certificate`.
+2. Перейдите по ссылке: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens).
+3. Нажмите на "View Global API Key" (см. скриншот ниже):
    ![](media/APIKey1.PNG)
-4. You may need to re-authenticate your account. After that, the API Key will be shown (see the screenshot below):
+4. Возможно, вам потребуется повторно пройти аутентификацию. После этого ключ API будет отображён (см. скриншот ниже):
    ![](media/APIKey2.png)
 
-When using, just enter your `domain name`, `email`, and `API KEY`. The diagram is as follows:
+При использовании просто введите ваше `доменное имя`, `email` и `API-ключ`. Схема приведена ниже:
    ![](media/DetailEnter.png)
-
 
 </details>
 
-## Manual Install & Upgrade
+## Ручная установка и обновление
 
 <details>
-  <summary>Click for manual install details</summary>
+  <summary>Нажмите для получения информации о ручной установке</summary>
 
-#### Usage
+#### Использование
 
-1. To download the latest version of the compressed package directly to your server, run the following command:
+1. Чтобы скачать последнюю версию архива напрямую на ваш сервер, выполните следующую команду:
 
 ```sh
 ARCH=$(uname -m)
@@ -113,10 +98,10 @@ case "${ARCH}" in
 esac
 
 
-wget https://github.com/MHSanaei/3x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
+wget https://github.com/qzstatick/3x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
 ```
 
-2. Once the compressed package is downloaded, execute the following commands to install or upgrade x-ui:
+1. После загрузки архива выполните следующие команды для установки или обновления x-ui:
 
 ```sh
 ARCH=$(uname -m)
@@ -145,35 +130,35 @@ systemctl restart x-ui
 
 </details>
 
-## Install with Docker
+## Установка с помощью Docker
 
 <details>
-  <summary>Click for Docker details</summary>
+  <summary>Нажмите для получения информации о Docker</summary>
 
-#### Usage
+#### Использование
 
-1. **Install Docker:**
+1. **Установите Docker:**
 
    ```sh
    bash <(curl -sSL https://get.docker.com)
    ```
 
-2. **Clone the Project Repository:**
+2. **Склонируйте репозиторий проекта:**
 
    ```sh
-   git clone https://github.com/MHSanaei/3x-ui.git
+   git clone https://github.com/qzstatick/3x-ui.git
    cd 3x-ui
    ```
 
-3. **Start the Service:**
+3. **Запустите сервис:**
 
    ```sh
    docker compose up -d
    ```
 
-  Add ```--pull always``` flag to make docker automatically recreate container if a newer image is pulled. See https://docs.docker.com/reference/cli/docker/container/run/#pull for more info.
+  Добавьте параметр ```--pull always``` для автоматического обновления контейнера, когда публикуется новый образ. Подробности: <https://docs.docker.com/reference/cli/docker/container/run/#pull>
 
-   **OR**
+   **ИЛИ**
 
    ```sh
    docker run -itd \
@@ -183,10 +168,10 @@ systemctl restart x-ui
       --network=host \
       --restart=unless-stopped \
       --name 3x-ui \
-      ghcr.io/mhsanaei/3x-ui:latest
+      ghcr.io/qzstatick/3x-ui:latest
    ```
 
-4. **Update to the Latest Version:**
+1. **Обновление до последней версии:**
 
    ```sh
    cd 3x-ui
@@ -195,7 +180,7 @@ systemctl restart x-ui
    docker compose up -d
    ```
 
-5. **Remove 3x-ui from Docker:**
+2. **Удаление 3x-ui из Docker:**
 
    ```sh
    docker stop 3x-ui
@@ -206,11 +191,13 @@ systemctl restart x-ui
 
 </details>
 
-## Nginx Settings
-<details>
-  <summary>Click for Reverse Proxy Configuration</summary>
+## Настройки Nginx
 
-#### Nginx Reverse Proxy
+<details>
+  <summary>Нажмите чтобы просмотреть конфигурацию обратного прокси-сервера</summary>
+
+#### Обратный прокси-сервер Nginx
+
 ```nginx
 location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -225,8 +212,9 @@ location / {
 ```
 
 #### Nginx sub-path
-- Ensure that the "URI Path" in the `/sub` panel settings is the same.
-- The `url` in the panel settings needs to end with `/`.   
+
+- Убедитесь, что "корневой путь URL адреса панели" в настройках панели и `/sub` совпадают.
+- В настройках панели `url` должен заканчиваться на `/`.
 
 ```nginx
 location /sub {
@@ -240,9 +228,10 @@ location /sub {
     proxy_pass http://127.0.0.1:2053;
 }
 ```
+
 </details>
 
-## Recommended OS
+## Рекомендуемые ОС
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -259,148 +248,148 @@ location /sub {
 - OpenSUSE Tubleweed
 - Amazon Linux 2023
 
-## Supported Architectures and Devices
+## Поддерживаемые архитектуры и устройства
 
 <details>
-  <summary>Click for Supported Architectures and devices details</summary>
+  <summary>Нажмите для получения информации о поддерживаемых архитектурах и устройствах</summary>
 
-Our platform offers compatibility with a diverse range of architectures and devices, ensuring flexibility across various computing environments. The following are key architectures that we support:
+Наша платформа поддерживает разнообразные архитектуры и устройства, обеспечивая гибкость в различных вычислительных средах. Вот основные архитектуры, которые мы поддерживаем:
 
-- **amd64**: This prevalent architecture is the standard for personal computers and servers, accommodating most modern operating systems seamlessly.
+- **amd64**: Эта распространенная архитектура является стандартом для персональных компьютеров и серверов, обеспечивая беспроблемную работу большинства современных операционных систем.
 
-- **x86 / i386**: Widely adopted in desktop and laptop computers, this architecture enjoys broad support from numerous operating systems and applications, including but not limited to Windows, macOS, and Linux systems.
+- **x86 / i386**: Широко используется в настольных и портативных компьютерах. Эта архитектура имеет широкую поддержку со стороны множества операционных систем и приложений, включая, но не ограничиваясь, Windows, macOS и Linux.
 
-- **armv8 / arm64 / aarch64**: Tailored for contemporary mobile and embedded devices, such as smartphones and tablets, this architecture is exemplified by devices like Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W, Orange Pi 3 LTS, and more.
+- **armv8 / arm64 / aarch64**: Предназначена для современных мобильных и встроенных устройств, таких как смартфоны и планшеты. Эта архитектура представлена устройствами, такими как Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W, Orange Pi 3 LTS и другими.
 
-- **armv7 / arm / arm32**: Serving as the architecture for older mobile and embedded devices, it remains widely utilized in devices like Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2, among others.
+- **armv7 / arm / arm32**: Служит архитектурой для старых мобильных и встроенных устройств, оставаясь широко используемой в таких устройствах, как Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2 и других.
 
-- **armv6 / arm / arm32**: Geared towards very old embedded devices, this architecture, while less prevalent, is still in use. Devices such as Raspberry Pi 1, Raspberry Pi Zero/Zero W, rely on this architecture.
+- **armv6 / arm / arm32**: Ориентирована на очень старые встроенные устройства, эта архитектура, хотя и менее распространенная, всё ещё используется. Например, такие устройства, как Raspberry Pi 1, Raspberry Pi Zero/Zero W, полагаются на эту архитектуру.
 
-- **armv5 / arm / arm32**: An older architecture primarily associated with early embedded systems, it is less common today but may still be found in legacy devices like early Raspberry Pi versions and some older smartphones.
+- **armv5 / arm / arm32**: Более старая архитектура, ассоциируемая с ранними встроенными системами, сегодня менее распространена, но всё ещё может быть найдена в устаревших устройствах, таких как ранние версии Raspberry Pi и некоторые старые смартфоны.
 
-- **s390x**: This architecture is commonly used in IBM mainframe computers and offers high performance and reliability for enterprise workloads.
+- **s390x**: Эта архитектура обычно используется в мейнфреймах IBM и обеспечивает высокую производительность и надежность для корпоративных рабочих нагрузок.
+
 </details>
 
-## Languages
+## Языки
 
-- English
-- Farsi
-- Traditional Chinese
-- Simplified Chinese
-- Russian
-- Vietnamese
-- Spanish
-- Indonesian
-- Ukrainian
-- Turkish
-- Português (Brazil)
+- Английский
+- Фарси
+- Китайский
+- Русский
+- Вьетнамский
+- Испанский
+- Индонезийский
+- Украинский
+- Турецкий
+- Португальский (Бразилия)
 
+## Возможности
 
-## Features
+- Мониторинг состояния системы
+- Поиск по всем входящим подключениям и клиентам
+- Тёмная/светлая тема
+- Поддержка нескольких пользователей и протоколов
+- Поддержка протоколов, включая VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard
+- Поддержка протоколов XTLS, включая RPRX-Direct, Vision, REALITY
+- Статистика трафика, ограничение трафика, ограничение по времени истечения
+- Настраиваемые шаблоны конфигурации Xray
+- Поддержка HTTPS доступа к панели (ваше доменное имя + SSL сертификат)
+- Поддержка установки SSL-сертификата в один клик и автоматического перевыпуска
+- Для получения более продвинутых настроек обращайтесь к панели
+- Исправляет маршруты API (настройка пользователя будет создана через API)
+- Поддержка изменения конфигураций по различным элементам, предоставленным в панели
+- Поддержка экспорта/импорта базы данных из панели
 
-- System Status Monitoring
-- Search within all inbounds and clients
-- Dark/Light theme
-- Supports multi-user and multi-protocol
-- Supports protocols, including VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, wireguard
-- Supports XTLS native Protocols, including RPRX-Direct, Vision, REALITY
-- Traffic statistics, traffic limit, expiration time limit
-- Customizable Xray configuration templates
-- Supports HTTPS access panel (self-provided domain name + SSL certificate)
-- Supports One-Click SSL certificate application and automatic renewal
-- For more advanced configuration items, please refer to the panel
-- Fixes API routes (user setting will be created with API)
-- Supports changing configs by different items provided in the panel.
-- Supports export/import database from the panel
-
-
-## Default Panel Settings
+## Настройки панели по умолчанию
 
 <details>
-  <summary>Click for default settings details</summary>
+  <summary>Нажмите для получения информации о настройках по умолчанию</summary>
 
-### Username, Password, Port, and Web Base Path
+### Имя пользователя, Пароль, Порт и Web Base Path
 
-If you choose not to modify these settings, they will be generated randomly (this does not apply to Docker).
+Если вы не измените эти настройки, они будут сгенерированы случайным образом (это не относится к Docker).
 
-**Default Settings for Docker:**
-- **Username:** admin
-- **Password:** admin
-- **Port:** 2053
+**Настройки по умолчанию для Docker:**
 
-### Database Management:
+- **Имя пользователя:** admin
+- **Пароль:** admin
+- **Порт:** 2053
 
-  You can conveniently perform database Backups and Restores directly from the panel.
+### Управление базой данных
 
-- **Database Path:**
+Вы можете удобно выполнять резервное копирование и восстановление базы данных прямо из панели.
+
+- **Путь к базе данных:**
   - `/etc/x-ui/x-ui.db`
 
+### Webbasepath
 
-### Web Base Path
+1. **Сбросить webbasepath:**
+   - Откройте терминал.
+   - Выполните команду `x-ui`.
+   - Выберите опцию `Reset Web Base Path`.
 
-1. **Reset Web Base Path:**
-   - Open your terminal.
-   - Run the `x-ui` command.
-   - Select the option to `Reset Web Base Path`.
+2. **Генерация или настройка пути:**
+   - Путь будет сгенерирован случайным образом, или вы можете ввести собственный путь.
 
-2. **Generate or Customize Path:**
-   - The path will be randomly generated, or you can enter a custom path.
+3. **Просмотр текущих настроек:**
+   - Чтобы просмотреть текущие настройки, используйте команду `x-ui settings` в терминале или опцию `View Current Settings` в `x-ui`.
 
-3. **View Current Settings:**
-   - To view your current settings, use the `x-ui settings` command in the terminal or `View Current Settings` in `x-ui`
+### Рекомендации по безопасности
 
-### Security Recommendation:
-- For enhanced security, use a long, random word in your URL structure.
+- Для повышения безопасности используйте длинное случайное слово в структуре вашего URL.
 
-**Examples:**
-- `http://ip:port/*webbasepath*/panel`
-- `http://domain:port/*webbasepath*/panel`
+**Примеры:**
 
-</details>
-
-## WARP Configuration
-
-<details>
-  <summary>Click for WARP configuration details</summary>
-
-#### Usage
-
-**For versions `v2.1.0` and later:**
-
-WARP is built-in, and no additional installation is required. Simply turn on the necessary configuration in the panel.
+- `http://ip_адрес:порт/*webbasepath*/panel`
+- `http://домен:порт/*webbasepath*/panel`
 
 </details>
 
-## IP Limit
+## Настройка WARP
 
 <details>
-  <summary>Click for IP limit details</summary>
+  <summary>Нажмите для получения информации о настройке WARP</summary>
 
-#### Usage
+#### Использование
 
-**Note:** IP Limit won't work correctly when using IP Tunnel.
+**Для версий `v2.1.0` и новее:**
 
-- **For versions up to `v1.6.1`:**
-  - The IP limit is built-in to the panel
+WARP встроен, и дополнительная установка не требуется. Просто включите необходимую конфигурацию в панели.
 
-**For versions `v1.7.0` and newer:**
+</details>
 
-To enable the IP Limit functionality, you need to install `fail2ban` and its required files by following these steps:
+## Ограничение IP
 
-1. Run the `x-ui` command in the terminal, then choose `IP Limit Management`.
-2. You will see the following options:
+<details>
+  <summary>Нажмите для получения информации об ограничении IP</summary>
 
-   - **Change Ban Duration:** Adjust the duration of bans.
-   - **Unban Everyone:** Lift all current bans.
-   - **Check Logs:** Review the logs.
-   - **Fail2ban Status:** Check the status of `fail2ban`.
-   - **Restart Fail2ban:** Restart the `fail2ban` service.
-   - **Uninstall Fail2ban:** Uninstall Fail2ban with configuration.
+#### Использование
 
-3. Add a path for the access log on the panel by setting `Xray Configs/log/Access log` to `./access.log` then save and restart xray.
+**Примечание:** Ограничение IP не будет работать корректно при использовании IP Tunnel.
 
-- **For versions before `v2.1.3`:**
-  - You need to set the access log path manually in your Xray configuration:
+- **Для версий до `v1.6.1`:**
+  - Ограничение IP встроено в панель.
+
+**Для версий `v1.7.0` и новее:**
+
+Чтобы включить функциональность ограничения IP, вам нужно установить `fail2ban` и его необходимые файлы, выполнив следующие шаги:
+
+1. Выполните команду `x-ui` в терминале, затем выберите `IP Limit Management`.
+2. Вам будут предложены следующие опции:
+
+   - **Change Ban Duration:** Отрегулировать длительность блокировок.
+   - **Unban Everyone:** Снять все текущие блокировки.
+   - **Check Logs:** Просмотреть логи.
+   - **Fail2ban Status:** Проверить статус `fail2ban`.
+   - **Restart Fail2ban:** Перезапустить службу `fail2ban`.
+   - **Uninstall Fail2ban:** Удалить Fail2ban с его конфигурацией.
+
+3. Добавьте путь к логам доступа в панели, установив `Xray Configs/log/Access log` в `./access.log`, затем сохраните и перезапустите xray.
+
+- **Для версий до `v2.1.3`:**
+  - Вам нужно вручную установить путь к логам доступа в вашей конфигурации Xray:
 
     ```sh
     "log": {
@@ -410,133 +399,131 @@ To enable the IP Limit functionality, you need to install `fail2ban` and its req
     },
     ```
 
-- **For versions `v2.1.3` and newer:**
-  - There is an option for configuring `access.log` directly from the panel.
+- **Для версий `v2.1.3` и новее:**
+  - Есть возможность настройки `access.log` непосредственно из панели.
 
 </details>
 
-## Telegram Bot
+## Телеграм-бот
 
 <details>
-  <summary>Click for Telegram bot details</summary>
+  <summary>Нажмите для получения информации о телеграм-боте</summary>
 
-#### Usage
+#### Использование
 
-The web panel supports daily traffic, panel login, database backup, system status, client info, and other notification and functions through the Telegram Bot. To use the bot, you need to set the bot-related parameters in the panel, including:
+Веб-панель поддерживает уведомления и функции, такие как ежедневный трафик, вход в панель, резервное копирование базы данных, состояние системы, информация о клиентах и другие, через телеграм-бота. Чтобы использовать бота, вам нужно настроить параметры, связанные с ботом, в панели, включая:
 
-- Telegram Token
-- Admin Chat ID(s)
-- Notification Time (in cron syntax)
-- Expiration Date Notification
-- Traffic Cap Notification
-- Database Backup
-- CPU Load Notification
+- Токен Telegram
+- ID чата админа(-ов)
+- Время уведомлений (в синтаксисе cron)
+- Уведомления о дате истечения
+- Уведомления о лимите трафика
+- Резервное копирование базы данных
+- Уведомления о загрузке CPU
 
+**Примеры синтаксиса:**
 
-**Reference syntax:**
+- `30 * * * * *` - Уведомлять на 30-й секунде каждого часа
+- `0 */10 * * * *` - Уведомлять на первой секунде каждых 10 минут
+- `@hourly` - Ежечасное уведомление
+- `@daily` - Ежедневное уведомление (в 00:00)
+- `@weekly` - Еженедельное уведомление
+- `@every 8h` - Уведомлять каждые 8 часов
 
-- `30 \* \* \* \* \*` - Notify at the 30s of each point
-- `0 \*/10 \* \* \* \*` - Notify at the first second of each 10 minutes
-- `@hourly` - Hourly notification
-- `@daily` - Daily notification (00:00 in the morning)
-- `@weekly` - weekly notification
-- `@every 8h` - Notify every 8 hours
+### Возможности телеграм-бота
 
-### Telegram Bot Features
+- Периодические отчеты
+- Уведомления о входе
+- Уведомления о пороге загруженности процессора
+- Уведомления о времени истечения и трафике заранее
+- Поддерживает меню отчетов клиента, если имя пользователя телеграм клиента добавлено в конфигурации пользователя
+- Поддержка отчета о трафике через Telegram, поиск по UUID (VMESS/VLESS) или паролю (TROJAN) - анонимно
+- Бот, основанный на меню
+- Поиск клиента по email (только администратор)
+- Проверка всех входящих соединений
+- Проверка состояния сервера
+- Проверка истекших пользователей
+- Получение резервных копий по запросу и в периодических отчётах
+- Многоязычный бот
 
-- Report periodic
-- Login notification
-- CPU threshold notification
-- Threshold for Expiration time and Traffic to report in advance
-- Support client report menu if client's telegram username added to the user's configurations
-- Support telegram traffic report searched with UUID (VMESS/VLESS) or Password (TROJAN) - anonymously
-- Menu-based bot
-- Search client by email (only admin)
-- Check all inbounds
-- Check server status
-- Check depleted users
-- Receive backup by request and in periodic reports
-- Multi-language bot
+### Настройка телеграм-бота
 
-### Setting up Telegram bot
-
-- Start [Botfather](https://t.me/BotFather) in your Telegram account:
+- Запустите [Botfather](https://t.me/BotFather) в вашем аккаунте Telegram:
     ![Botfather](./media/botfather.png)
 
-- Create a new Bot using /newbot command: It will ask you 2 questions, A name and a username for your bot. Note that the username has to end with the word "bot".
-    ![Create new bot](./media/newbot.png)
+- Создайте нового бота с помощью команды /newbot: у вас спросят 2 вопроса: отображаемое имя и имя пользователя для вашего бота. Обратите внимание, что имя пользователя должно заканчиваться на слово "bot".
+    ![Создать нового бота](./media/newbot.png)
 
-- Start the bot you've just created. You can find the link to your bot here.
-    ![token](./media/token.png)
+- Запустите созданного бота. Ссылку на вашего бота можно найти здесь.
+    ![токен](./media/token.png)
 
-- Enter your panel and config Telegram bot settings like below:
-![Panel Config](./media/panel-bot-config.png)
+- Перейдите в панель и настройте параметры телеграм-бота следующим образом:
+![Настройки панели](./media/panel-bot-config.png)
 
-Enter your bot token in input field number 3.
-Enter the user ID in input field number 4. The Telegram accounts with this id will be the bot admin. (You can enter more than one, Just separate them with ,)
+Введите токен вашего бота в поле ввода номер 3.
+Введите ID пользователя в поле ввода номер 4. Telegram-аккаунты с этим ID будут администраторами бота. (Вы можете ввести несколько ID, разделяя их запятой)
 
-- How to get Telegram user ID? Use this [bot](https://t.me/useridinfobot), Start the bot and it will give you the Telegram user ID.
-![User ID](./media/user-id.png)
+- Как получить ID пользователя Telegram? Используйте этот [бот](https://t.me/useridinfobot). Запустите бота, и он отобразит ваш ID пользователя Telegram.
+![ID пользователя](./media/user-id.png)
 
 </details>
 
-## API Routes
+## Маршруты API
 
 <details>
-  <summary>Click for API routes details</summary>
+  <summary>Нажмите для получения информации о маршрутах API</summary>
 
-#### Usage
+#### Использование
 
-- [API Documentation](https://documenter.getpostman.com/view/5146551/2sAXxP8Y12)
-- `/login` with `POST` user data: `{username: '', password: ''}` for login
-- `/panel/api/inbounds` base for following actions:
+- [API документация](https://documenter.getpostman.com/view/5146551/2sAXxP8Y12)
+- `/login` с `POST`-данными: `{username: '', password: ''}` для входа
+- `/panel/api/inbounds` это базовый путь для следующих действий:
 
-| Method | Path                               | Action                                      |
-| :----: | ---------------------------------- | ------------------------------------------- |
-| `GET`  | `"/list"`                          | Get all inbounds                            |
-| `GET`  | `"/get/:id"`                       | Get inbound with inbound.id                 |
-| `GET`  | `"/getClientTraffics/:email"`      | Get Client Traffics with email              |
-| `GET`  | `"/getClientTrafficsById/:id"`     | Get client's traffic By ID |
-| `GET`  | `"/createbackup"`                  | Telegram bot sends backup to admins         |
-| `POST` | `"/add"`                           | Add inbound                                 |
-| `POST` | `"/del/:id"`                       | Delete Inbound                              |
-| `POST` | `"/update/:id"`                    | Update Inbound                              |
-| `POST` | `"/clientIps/:email"`              | Client Ip address                           |
-| `POST` | `"/clearClientIps/:email"`         | Clear Client Ip address                     |
-| `POST` | `"/addClient"`                     | Add Client to inbound                       |
-| `POST` | `"/:id/delClient/:clientId"`       | Delete Client by clientId\*                 |
-| `POST` | `"/updateClient/:clientId"`        | Update Client by clientId\*                 |
-| `POST` | `"/:id/resetClientTraffic/:email"` | Reset Client's Traffic                      |
-| `POST` | `"/resetAllTraffics"`              | Reset traffics of all inbounds              |
-| `POST` | `"/resetAllClientTraffics/:id"`    | Reset traffics of all clients in an inbound |
-| `POST` | `"/delDepletedClients/:id"`        | Delete inbound depleted clients (-1: all)   |
-| `POST` | `"/onlines"`                       | Get Online users ( list of emails )         |
+| Метод  | Путь                               | Действие
+| :----: | -----------------------------------| -------------------------------------------
+| `GET`  | `"/list"`                          | Получить все входящие соединения
+| `GET`  | `"/get/:id"`                       | Получить входящее соединение с inbound.id
+| `GET`  | `"/getClientTraffics/:email"`      | Получить трафик клиента по email
+| `GET`  | `"/getClientTrafficsById/:id"`     | Получить трафик клиента по ID
+| `GET`  | `"/createbackup"`                  | Telegram-бот отправит резервную копию администраторам
+| `POST` | `"/add"`                           | Добавить входящее соединение
+| `POST` | `"/del/:id"`                       | Удалить входящее соединение
+| `POST` | `"/update/:id"`                    | Обновить входящее соединение
+| `POST` | `"/clientIps/:email"`              | IP-адрес клиента
+| `POST` | `"/clearClientIps/:email"`         | Очистить IP-адреса клиента
+| `POST` | `"/addClient"`                     | Добавить клиента к входящему соединению
+| `POST` | `"/:id/delClient/:clientId"`       | Удалить клиента по clientId\*
+| `POST` | `"/updateClient/:clientId"`        | Обновить клиента по clientId\*
+| `POST` | `"/:id/resetClientTraffic/:email"` | Сбросить трафик клиента
+| `POST` | `"/resetAllTraffics"`              | Сбросить трафик всех входящих соединений
+| `POST` | `"/resetAllClientTraffics/:id"`    | Сбросить трафик всех клиентов в входящем соединении
+| `POST` | `"/delDepletedClients/:id"`        | Удалить истекших клиентов в входящем соединении (-1: всех)
+| `POST` | `"/onlines"`                       | Получить пользователей, которые находятся онлайн (список email'ов)
 
-\*- The field `clientId` should be filled by:
+\*- Поле `clientId` должно быть заполнено следующим образом:
 
-- `client.id` for VMESS and VLESS
-- `client.password` for TROJAN
-- `client.email` for Shadowsocks
+- `client.id` для VMESS и VLESS
+- `client.password` для TROJAN
+- `client.email` для Shadowsocks
 
-- [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/5146551-e6aac565-e0e2-46df-acff-2607a51bbd04?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D5146551-e6aac565-e0e2-46df-acff-2607a51bbd04%26entityType%3Dcollection%26workspaceId%3Dd64f609f-485a-4951-9b8f-876b3f917124)
 </details>
 
-## Environment Variables
+## Переменные среды
 
 <details>
-  <summary>Click for environment variables details</summary>
+  <summary>Нажмите для получения информации о переменных среды</summary>
 
-#### Usage
+#### Использование
 
-| Variable       |                      Type                      | Default       |
-| -------------- | :--------------------------------------------: | :------------ |
-| XUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`      |
-| XUI_DEBUG      |                   `boolean`                    | `false`       |
-| XUI_BIN_FOLDER |                    `string`                    | `"bin"`       |
-| XUI_DB_FOLDER  |                    `string`                    | `"/etc/x-ui"` |
-| XUI_LOG_FOLDER |                    `string`                    | `"/var/log"`  |
+| Переменная       |                      Тип                       | Значение по умолчанию |
+| ---------------- | :------------------------------------------:   | :-------------------- |
+| XUI_LOG_LEVEL    | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`             |
+| XUI_DEBUG        |                   `boolean`                    | `false`              |
+| XUI_BIN_FOLDER   |                    `string`                    | `"bin"`              |
+| XUI_DB_FOLDER    |                    `string`                    | `"/etc/x-ui"`        |
+| XUI_LOG_FOLDER   |                    `string`                    | `"/var/log"`         |
 
-Example:
+Пример:
 
 ```sh
 XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
@@ -544,7 +531,7 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
-## Preview
+## Предварительный Просмотр
 
 ![1](./media/1.png)
 ![2](./media/2.png)
@@ -553,16 +540,3 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 ![5](./media/5.png)
 ![6](./media/6.png)
 ![7](./media/7.png)
-
-## A Special Thanks to
-
-- [alireza0](https://github.com/alireza0/)
-
-## Acknowledgment
-
-- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
-- [Vietnam Adblock rules](https://github.com/vuong2023/vn-v2ray-rules) (License: **GPL-3.0**): _A hosted domain hosted in Vietnam and blocklist with the most efficiency for Vietnamese._
-
-## Stargazers over Time
-
-[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg)](https://starchart.cc/MHSanaei/3x-ui)
